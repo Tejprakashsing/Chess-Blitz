@@ -14,7 +14,7 @@ class GameManager{
     }
 
     removeUser(socket){
-        this.user=user.filter(user=>user!==socket);
+        this.users = this.users.filter(user => user !== socket);
     }
 
     addHandler(socket){
@@ -39,7 +39,7 @@ class GameManager{
     }
 
     handleMove(socket,message){
-        console.log(Game.length);
+        // console.log(Game.length);
         let game=this.Games.find(game=> game.player1===socket || game.player2===socket );
         if(game)
         game.makeMove(socket,message.move);
